@@ -1,79 +1,409 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Yusei Magic', sans-serif;
-    box-sizing: border-box;
-    font-weight: bold;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Yusei Magic", sans-serif;
+  box-sizing: border-box;
+  font-weight: bold;
 }
+header {
+  width: 100%;
+  height: 100%;
+}
+nav {
+  width: 100%;
+  height: 10%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  top: -5px;
+  position: fixed;
+  transition: top 0.3s;
+  
+}
+nav .website-name {
+  color: white;
+  width: 20%;
+  text-align: center;
+}
+.website-name h1 {
+  letter-spacing: 3px;
+}
+nav .menu a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+nav .menu {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+main {
+  display: flex;
+  background: url("https://images.unsplash.com/photo-1602992708529-c9fdb12905c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80")
+  /* background: url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80://static.pexels.com/photos/232/apple-iphone-books-desk-large.jpg") */
+    no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+section h3 {
+  font-size: 35px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px rgb(253, 251, 251);
+}
+section h1 {
+  margin: 30px 0px 20px 0px;
+  font-size: 55px;
+  font-weight: 700;
+  text-shadow: 2px 1px 5px rgb(245, 242, 242);
+  text-transform: uppercase;
+}
+
+.change-text:after {
+  content: "";
+  animation: changetext 5s infinite linear;
+  color: white;
+}
+@keyframes changetext {
+  0% {
+    content: "Tech Enthusiast";
+  }
+  20% {
+    content: "WEB Developer";
+  }
+  40% {
+    content: "Student";
+  }
+  60% {
+    content: "JavaScript Developer";
+  }
+  80% {
+    content: "Free Thinker";
+  }
+  100% {
+    content: "Kenyan";
+  }
+}
+nav .menu a:hover {
+  color: black;
+  transition: 1.7s;
+}
+nav .menu a:first-child {
+  color: black;
+}
+
+
+
+/* Page content */
 header{
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 100vh;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+  
+
+
+/* ABOUT START */
+
+#about .info {
+  display: flex;
+  flex-direction: row;
 }
-nav{
-    width: 100%;
-    height: 15vh;
-    background: rgba(29,161,242,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-transform: uppercase;
+
+#about h2 {
+  color: #0d2435;
 }
-nav .website-name{
-    color: white;
-    width: 20%;
-    text-align: center;
+
+#about h2::after {
+  border-bottom: 2px dashed #918d8d;
 }
-.website-name h1{
-    letter-spacing: 3px;
+
+#about .info p {
+  line-height: 270%;
 }
-nav .menu a{
-    color: white;
-    text-decoration: none;
-    letter-spacing: 2px;
+
+#about .signature {
+  font-family: "Brush Script MT", cursive;
+  font-size: 150%;
+  float: right;
+  color: #0d2435;
+  opacity: 0.9;
 }
-nav .menu{
-    display: flex;
-    width: 40%;
-    justify-content: space-around;
+
+#skill-set {
+  margin-top: 80px;
+  padding-bottom: 80px;
 }
-main{
-    display: flex;
-    background-image: url(https://images.unsplash.com/photo-1537498425277-c283d32ef9db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1178&q=80);
-    width: 100%;
-    height: 85vh;
-    justify-content: center;
-    align-items: center;
+
+#skill-set ul {
+  overflow: hidden;
+  display: inline-flex;
 }
-section h3{
-    font-size: 35px;
-    font-weight: 200;
-    letter-spacing: 3px;
-    text-shadow: 1px 1px 2px black;
+
+#web-development-skills {
+  background-color: #114190;
 }
-section h1{
-    margin: 30px 0px 20px 0px;
-    font-size: 55px;
-    font-weight: 700;
-    text-shadow: 2px 1px 5px black;
-    text-transform: uppercase;
+
+#automation-skills {
+  background-color: #e11a61;
 }
-.change-text:after{
-    content: '';
-    animation: changetext 5s infinite linear;
-    color: white;
+
+#misc-skills {
+  background-color: #9d1098;
 }
-@keyframes changetext{
-    0%{content: 'Boy';}
-    20%{content: 'WEB Developer';}
-    40%{content: 'Student';}
-    60%{content: 'Python Developer';}
-    80%{content: 'Thinker';}
-    100%{content: 'Indian';}
+
+.skills {
+  color: white;
 }
-nav .menu a:hover{
-    color: black;
-    transition: 0.7s;
+
+.skills li {
+  padding: 30px;
+  font-size: larger;
 }
-nav .menu a:first-child{
-    color: black;
+
+/* ABOUT END*/
+
+/* PROJECTS START */
+.portfolio {
+  background-color: rgb(240, 206, 206);
+  width: 100%;
+  margin: 0 0 50px;
+  font-family: "Raleway", sans-serif;
+  padding-top: 15%;
+  padding-bottom: 10%;
+}
+.portfolio_head {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  
+}
+.portfolio_head h1 {
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Raleway-Medium", sans-serif;
+}
+.portfolio_head h1 span {
+  border-bottom: 2px solid #a2437e;
+  
+}
+.text-down {
+  position: relative;
+  overflow: hidden;
+}
+.text-down img {
+  width: 100%;
+  height: 200px;
+}
+.text-down .textbox {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -255px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 5px;
+  background-color: #a2437e61;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+.text-down:hover .textbox {
+  margin-top: 0;
+}
+.details {
+  width: 100%;
+  padding: 30px 30px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 24px;
+  font-family: "Raleway-Light", sans-serif;
+}
+.view-more {
+  width: 100%;
+  padding-top: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  font-weight: bold;
+}
+.textt {
+  text-align: center;
+  padding-top: 10px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-family: "Raleway-Light", sans-serif;
+}
+.top {
+  padding-top: 10px;
+}
+
+.tools {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.tools li {
+  background-color: grey;
+  display: block;
+  color: white;
+  padding: 1%;
+  text-decoration: none;
+}
+
+/* PROJECTS END  */
+
+/* CONTACT START */
+
+.container2 {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #f9f9f9;
+  padding: 25px;
+  margin: 50px 0;
+}
+
+#contact h3 {
+  color: #f96;
+  display: block;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #0cf;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #09c;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #999;
+}
+::-webkit-input-placeholder {
+  color: #888;
+}
+:-moz-placeholder {
+  color: #888;
+}
+::-moz-placeholder {
+  color: #888;
+}
+:-ms-input-placeholder {
+  color: #888;
+}
+
+/* CONTACT END */
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(14, 13, 12);
+  color: white;
+}
+
+footer a {
+  padding: 3px;
+  font-size: 50px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
 }
