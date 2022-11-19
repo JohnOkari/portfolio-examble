@@ -178,6 +178,11 @@ header{
   font-size: larger;
 }
 
+.container{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
 /* ABOUT END*/
 
 /* PROJECTS START */
@@ -186,7 +191,6 @@ header{
   width: 100%;
   margin: 0 0 50px;
   font-family: "Raleway", sans-serif;
-  padding-top: 15%;
   padding-bottom: 10%;
 }
 .portfolio_head {
